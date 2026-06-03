@@ -101,7 +101,7 @@ export default function UserPersona() {
   const [showAssumptions, setShowAssumptions] = useState(false)
 
   return (
-    <section id="persona" className="py-[120px]" style={{ backgroundColor: '#1A1614' }}>
+    <section id="persona" className="min-h-screen py-16 flex flex-col justify-center" style={{ backgroundColor: '#1A1614' }}>
       <div className="max-w-[1280px] mx-auto px-6 lg:px-10">
         <SectionHeader phase="Empathy Phase" title="User Persona" subtitle="Built from 2 interviews and 144 survey responses." light />
 

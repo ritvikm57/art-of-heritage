@@ -30,7 +30,7 @@ const item = { hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, trans
 
 export default function HMW() {
   return (
-    <section id="hmw" className="py-[120px]" style={{ backgroundColor: '#F5F0E8' }}>
+    <section id="hmw" className="min-h-screen py-16 flex flex-col justify-center" style={{ backgroundColor: '#F5F0E8' }}>
       <div className="max-w-[1280px] mx-auto px-6 lg:px-10">
         <SectionHeader
           phase="Define → Ideate Phase"

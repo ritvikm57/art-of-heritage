@@ -7,7 +7,7 @@ const item = { hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, trans
 
 export default function Team() {
   return (
-    <section id="team" className="py-[120px]" style={{ backgroundColor: '#1A1614' }}>
+    <section id="team" className="min-h-screen py-16 flex flex-col justify-center" style={{ backgroundColor: '#1A1614' }}>
       <div className="max-w-[1280px] mx-auto px-6 lg:px-10">
         <SectionHeader
           phase="The Team"

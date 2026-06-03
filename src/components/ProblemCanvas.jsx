@@ -145,7 +145,7 @@ export default function ProblemCanvas() {
   const [openIndex, setOpenIndex] = useState(0)
 
   return (
-    <section id="problem" className="py-[120px]" style={{ backgroundColor: '#F5F0E8' }}>
+    <section id="problem" className="min-h-screen py-16 flex flex-col justify-center" style={{ backgroundColor: '#F5F0E8' }}>
       <div className="max-w-[1280px] mx-auto px-6 lg:px-10">
         <SectionHeader
           phase="Define Phase"

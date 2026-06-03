@@ -52,7 +52,7 @@ const surveyStats = [
 
 export default function FieldResearch() {
   return (
-    <section id="research" className="py-[120px]" style={{ backgroundColor: '#F5F0E8' }}>
+    <section id="research" className="min-h-screen py-16 flex flex-col justify-center" style={{ backgroundColor: '#F5F0E8' }}>
       <div className="max-w-[1280px] mx-auto px-6 lg:px-10">
         <SectionHeader
           phase="Empathy Phase · Primary Research"

@@ -138,7 +138,7 @@ export default function RootCause() {
   const [openIndex, setOpenIndex] = useState(0)
 
   return (
-    <section id="rootcause" className="py-[120px]" style={{ backgroundColor: '#1A1614' }}>
+    <section id="rootcause" className="min-h-screen py-16 flex flex-col justify-center" style={{ backgroundColor: '#1A1614' }}>
       <div className="max-w-[1280px] mx-auto px-6 lg:px-10">
         <SectionHeader
           phase="Define Phase"
