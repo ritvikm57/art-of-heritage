@@ -2,12 +2,12 @@ import { motion } from 'framer-motion'
 import SectionHeader from './SectionHeader'
 
 const selected = [
-  { n: 1, text: 'How might we encourage traditional clothing in e-commerce platforms dominated by global brands?' },
-  { n: 2, text: 'How might we incorporate traditional clothing in rapidly changing trend cycles?' },
-  { n: 3, text: 'How might we convince consumers that traditional clothing provides value worth the cost?' },
-  { n: 4, text: 'How might we build a strong & modern brand identity for modern Indian clothing?' },
-  { n: 5, text: 'How might we help people appreciate the heritage and stories behind traditional art?' },
-  { n: 6, text: 'How might we educate consumers about the authenticity of traditional clothes?' },
+  { n: '01', text: 'How might we encourage traditional clothing in e-commerce platforms dominated by global brands?' },
+  { n: '02', text: 'How might we incorporate traditional clothing in rapidly changing trend cycles?' },
+  { n: '03', text: 'How might we convince consumers that traditional clothing provides value worth the cost?' },
+  { n: '04', text: 'How might we build a strong & modern brand identity for modern Indian clothing?' },
+  { n: '05', text: 'How might we help people appreciate the heritage and stories behind traditional art?' },
+  { n: '06', text: 'How might we educate consumers about the authenticity of traditional clothes?' },
 ]
 
 const all = [
@@ -25,14 +25,8 @@ const all = [
   'How can we reduce duplicates/fakes in the market?',
 ]
 
-const container = {
-  hidden: {},
-  visible: { transition: { staggerChildren: 0.08 } },
-}
-const item = {
-  hidden: { opacity: 0, y: 30 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.55 } },
-}
+const container = { hidden: {}, visible: { transition: { staggerChildren: 0.06 } } }
+const item = { hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.5 } } }
 
 export default function HMW() {
   return (
@@ -44,69 +38,54 @@ export default function HMW() {
           subtitle="12 HMW questions across 6 problem areas — 6 selected to drive our 138-idea ideation session."
         />
 
-        {/* Selected 6 */}
-        <p className="font-dm font-medium text-xs tracking-widest uppercase text-ink/40 mb-6">
-          6 Selected HMWs
-        </p>
+        {/* Selected 6 — large numbered list */}
+        <p className="font-dm text-[10px] tracking-[0.25em] uppercase text-ink/30 mb-6">6 Selected HMWs</p>
         <motion.div
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: '-100px' }}
+          viewport={{ once: true, margin: '-80px' }}
           variants={container}
-          className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-20"
+          className="space-y-px bg-ink/8 mb-20"
         >
-          {selected.map((hmw) => (
+          {selected.map((hmw, i) => (
             <motion.div
               key={hmw.n}
               variants={item}
-              className="p-7 rounded-sm flex gap-5 items-start"
-              style={{ backgroundColor: '#C9952A18', border: '1px solid #C9952A30' }}
+              className="flex items-start gap-6 md:gap-10 px-6 md:px-8 py-7 bg-surface group"
             >
-              <span
-                className="font-cormorant font-semibold text-3xl flex-shrink-0 leading-none"
-                style={{ color: '#B85C38' }}
-              >
+              <span className="font-cormorant font-semibold text-gold/40 leading-none flex-shrink-0 mt-0.5" style={{ fontSize: 'clamp(32px, 4vw, 48px)' }}>
                 {hmw.n}
               </span>
-              <p className="font-dm font-light text-sm text-ink/80 leading-relaxed pt-1">
+              <p className="font-cormorant font-medium text-ink leading-snug flex-1" style={{ fontSize: 'clamp(17px, 1.8vw, 22px)' }}>
                 {hmw.text}
               </p>
             </motion.div>
           ))}
         </motion.div>
 
-        {/* All 12 */}
-        <p className="font-dm font-medium text-xs tracking-widest uppercase text-ink/40 mb-6">
-          All 12 HMW Questions
-        </p>
+        {/* All 12 — compact numbered list */}
+        <p className="font-dm text-[10px] tracking-[0.25em] uppercase text-ink/30 mb-6">All 12 HMW Questions</p>
         <motion.div
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: '-100px' }}
+          viewport={{ once: true, margin: '-80px' }}
           variants={container}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3"
+          className="grid grid-cols-1 md:grid-cols-2 gap-px bg-ink/8"
         >
           {all.map((q, i) => {
-            const isSelected = selected.some(s => s.n === i + 1)
+            const isSel = i < 6
             return (
               <motion.div
                 key={i}
                 variants={item}
-                className={`p-5 rounded-sm flex gap-4 items-start border ${
-                  isSelected ? 'border-gold/30 bg-gold/5' : 'border-ink/10 bg-surface'
-                }`}
+                className="flex items-start gap-4 px-6 py-5 bg-surface"
               >
-                <span className={`font-dm font-medium text-sm flex-shrink-0 ${isSelected ? 'text-terracotta' : 'text-ink/30'}`}>
+                <span className={`font-dm font-medium text-sm flex-shrink-0 leading-none mt-0.5 w-7 ${isSel ? 'text-terracotta' : 'text-ink/20'}`}>
                   {String(i + 1).padStart(2, '0')}
                 </span>
-                <p className="font-dm font-light text-sm text-ink/70 leading-relaxed">
+                <p className={`font-dm font-light text-sm leading-relaxed ${isSel ? 'text-ink/75' : 'text-ink/40'}`}>
                   {q}
                 </p>
-                {isSelected && (
-                  <span className="flex-shrink-0 mt-0.5">
-                    <span className="inline-block w-1.5 h-1.5 rounded-full bg-terracotta" />
-                  </span>
-                )}
               </motion.div>
             )
           })}

@@ -27,7 +27,6 @@ export default function App() {
       <RootCause />
       <HMW />
       <Ideation />
-      <Brainwriting />
       <Prototype />
       <SurveyData />
       <Team />

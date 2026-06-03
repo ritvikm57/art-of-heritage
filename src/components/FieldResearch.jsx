@@ -15,7 +15,7 @@ const interviews = [
     initials: 'KR',
     name: 'K. Rithvik',
     role: '2nd Year ECM Student, Mahindra University',
-    by: 'Yathan',
+    by: 'Yatin',
     bg: '#2D3561',
     quotes: [
       '"I prefer Indian-inspired designs over western — western never really suited me."',
@@ -29,8 +29,8 @@ const interviews = [
   {
     initials: 'GA',
     name: 'Gautam',
-    role: 'BBNLbB Student',
-    by: 'Team member',
+    role: 'BA-LLB Student',
+    by: 'Tamayee',
     bg: '#6B8F71',
     quotes: [
       '"I\'ve heard about Kalamkari but I don\'t know much about it."',
@@ -135,7 +135,7 @@ export default function FieldResearch() {
             </div>
 
             <p className="font-dm text-xs text-ink/40 leading-relaxed">
-              Survey conducted across students, working professionals, homemakers, and business owners across age groups 18–50+.
+              Survey conducted across students, working professionals, homemakers, and business owners across age groups 18–25+.
             </p>
           </motion.div>
         </motion.div>
