@@ -47,8 +47,8 @@ export default function Hero() {
           {['Art of', 'Heritage.'].map((line, li) => (
             <div key={li} className="overflow-hidden">
               <motion.h1
-                className="font-cormorant font-semibold text-[#F5F0E8] leading-[0.88] block"
-                style={{ fontSize: 'clamp(68px, 11vw, 128px)' }}
+                className="font-cormorant font-semibold text-[#F5F0E8] leading-[0.88] pb-[0.15em] block"
+                style={{ fontSize: 'clamp(70px, 12vw, 128px)' }}
                 initial={{ y: '100%' }}
                 animate={{ y: 0 }}
                 transition={{ duration: 1, delay: 0.4 + li * 0.18, ease: [0.16, 1, 0.3, 1] }}
