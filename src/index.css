@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    margin: 0;
+    background-color: #F5F0E8;
+    color: #1A1614;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+  }
+
+  #root {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    text-align: left;
+    border: none;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+}
+
+@layer utilities {
+  .font-cormorant { font-family: 'Cormorant Garamond', serif; }
+  .font-dm { font-family: 'DM Sans', sans-serif; }
+}
