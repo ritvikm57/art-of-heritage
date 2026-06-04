@@ -1,6 +1,17 @@
 import { motion } from 'framer-motion'
 import SectionHeader from './SectionHeader'
-import Placeholder from './Placeholder'
+
+const members = [
+  { name: 'Praseedha', id: 'SE24UCSE208', role: 'Data Collection & Research', initials: 'PS' },
+  { name: 'Ritvik', id: 'SE24UCSE225', role: 'Web Developer & Research', initials: 'RM' },
+  { name: 'Yatin', id: 'SE24UMEE031', role: 'Lead Interviewer, On-Field Representative', initials: 'YK' },
+  { name: 'Tanmayee', id: 'SE24UNAN001', role: 'Lead Interviewer, On-Field Representative', initials: 'TK' },
+  { name: 'Nainika', id: 'SE24UARI020', role: 'Proto Persona & Journey Map', initials: 'NR' },
+  { name: 'Praneetha', id: 'SE24UCIE034', role: 'Root Cause Analyst & Data', initials: 'PG' },
+  { name: 'Roshan', id: 'SE24UCSE245', role: 'Prototype Analyst', initials: 'RS' },
+]
+
+const colors = ['#B85C38', '#2D3561', '#C9952A', '#6B8F71', '#B85C38', '#2D3561', '#C9952A']
 
 const container = { hidden: {}, visible: { transition: { staggerChildren: 0.08 } } }
 const item = { hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6 } } }
@@ -12,7 +23,7 @@ export default function Team() {
         <SectionHeader
           phase="The Team"
           title="Lok Sabha"
-          subtitle="A design thinking team from Mahindra University."
+          subtitle="A design thinking team from Mahindra University, 2026."
           light
         />
 
@@ -21,24 +32,30 @@ export default function Team() {
           whileInView="visible"
           viewport={{ once: true, margin: '-100px' }}
           variants={container}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 mb-16"
+          className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-px bg-white/8 mb-16"
         >
-          {[
-            'Team member 1: Name, Roll Number, Role (e.g. Lead Researcher)',
-            'Team member 2: Name, Roll Number, Role',
-            'Team member 3: Name, Roll Number, Role',
-            'Team member 4: Name, Roll Number, Role',
-            'Team member 5: Name, Roll Number, Role',
-            'Team member 6: Name, Roll Number, Role',
-            'Team member 7: Name, Roll Number, Role',
-          ].map((label, i) => (
-            <motion.div key={i} variants={item}>
-              <Placeholder label={label} height="100px" />
+          {members.map((m, i) => (
+            <motion.div
+              key={m.id}
+              variants={item}
+              className="p-7 flex flex-col gap-5"
+              style={{ backgroundColor: '#1A1614' }}
+            >
+              <div
+                className="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0"
+                style={{ backgroundColor: colors[i] + '22', border: `1px solid ${colors[i]}40` }}
+              >
+                <span className="font-cormorant font-semibold text-sm" style={{ color: colors[i] }}>{m.initials}</span>
+              </div>
+              <div>
+                <h3 className="font-cormorant font-semibold text-2xl text-[#F5F0E8] leading-none mb-1">{m.name}</h3>
+                <p className="font-dm text-[10px] tracking-[0.18em] uppercase text-[#F5F0E8]/25 mb-3">{m.id}</p>
+                <p className="font-dm font-light text-xs text-[#F5F0E8]/50 leading-relaxed">{m.role}</p>
+              </div>
             </motion.div>
           ))}
         </motion.div>
 
-        {/* Research highlights */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
